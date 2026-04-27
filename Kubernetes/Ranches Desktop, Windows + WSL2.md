@@ -6,7 +6,7 @@
 4. Commandzeilentool kubectl und k9s installieren
 	* `brew install kubectl k9s`
  5. Tuxmux und VIM installieren
-	 * `sudo apt install tumux vim`
+	 * `sudo apt install tmux vim`
 
 6. Testen ob kubernetes cluster in Ranches angesprochen werden kann
 	* WSL: kubectl get pods
