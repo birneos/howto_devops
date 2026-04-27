@@ -1,0 +1,35 @@
+.obsidian
+.trash
+.vscode
+conflict-files-obsidian-git.md
+
+
+# --- Obsidian Core ---
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
+# --- Optional: komplette lokale UI-Zustände ---
+.obsidian/graph.json
+
+# --- Plugins (optional, je nach Wunsch) ---
+# Wenn du Plugins syncen willst → auskommentieren!
+# Wenn nicht → aktiv lassen
+
+# .obsidian/plugins/
+# .obsidian/themes/
+
+# --- OS spezifisch ---
+.DS_Store
+Thumbs.db
+
+# --- Logs / temporär ---
+*.log
+*.tmp
+
+# --- Node / Tools (falls du Plugins devst) ---
+node_modules/
+
+# --- Backup-Dateien ---
+*.bak
+*.swp
