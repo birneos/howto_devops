@@ -1,4 +1,7 @@
 
+## Ranches Desktop, Windows + WSL2
+
+
 1. WSL2 muss installiert sein
 2. Ranches Desktop installieren
 3. brew als Packetmanager bietet unter Ubuntu (WSL) oft mehr Pakete --> Empfehlung
@@ -41,3 +44,45 @@
 				`compinit`
 			 oder
 				**These can be added to `~/.zshrc` as well for future shell sessions.**
+				
+8. VIM konfigurieren, wichtig für YAML Dateien
+
+			Falls keine vim Konfiguration vorhanden (.vimrc), erstelle eine in deinem Homeverzeichnis
+			
+			`vim .vimrc`
+
+			.vimrc
+
+  
+
+				" This is a basic .vimrc for YAML editing:
+				
+				" Ensure Vim uses filetype plugins
+				filetype plugin on
+				
+				
+				" Enable indentation
+				filetype indent on
+				
+				" Set the default indentation to 2 spaces for all files
+				
+				set tabstop=2
+				set softtabstop=2
+				set shiftwidth=2
+				set expandtab
+				
+				
+				" Highlight trailing whitespace in all files
+				autocmd BufRead,BufNewFile * match Error /\s\+$/
+
+				
+				* Enable auto-indentation
+				set autoindent
+				
+				*  Turn on syntax highlighting
+				syntax on
+			
+				* Set backspace so it acts more intuitively
+				set backspace=indent,eol,start
+	
+			
