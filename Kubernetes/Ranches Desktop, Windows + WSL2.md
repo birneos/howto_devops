@@ -9,7 +9,7 @@
 	 * `sudo apt install tumux vim`
 
 6. Testen ob kubernetes cluster in Ranches angesprochen werden kann
-	* WSL: kubectl get pods
+	* WSL: `kubectl get pods`
 
 		erwartete Ausgabe
 		`➜  ~ kubectl get pods`
