@@ -1,13 +1,19 @@
+Ein Deployment verwaltet eine Gruppe von Pods, um eine Anwendungs-Workload auszuführen, in der Regel eine, die keinen Zustand verwaltet.
 
 https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
-  Wir können damit eine gewünschte Anzahl an Replicas eines Images erstellen. Die Replicas sollen dann auch immer in der gewünschten Anzahl verfügbar sein, um eine performante Lastverteilung zu organisieren. Kubernetes managt das über ReplicaSets.
+`k create deployment test --image=httpd --replicas=4`
+
+  * erstelle 4 Replicas mit dem deployment
+  * Deployment steuert die Replicasets die im Deployment erstellt werden
+	    `k get deployment.apps`
+		`k describe replicasets.apps` test-x
+  * wir können damit eine gewünschte Anzahl an Replicas eines Images erstellen
+  * ==Replicasets werden nur vom deployment und kubernetes erstellt, verändert, gemanaged es gibt kein `k create replica` oder ähnliches==
+  * 
 
 `k create deployment -h | less`
 
-`k create deployment test --image=httpd --replicas=4`
-
-  
 `k create deployment test --image=httpd --replicas=10 --dry-run=client -o yaml > deploy.yaml`
 
 `k apply -f deploy.yaml`
@@ -25,6 +31,7 @@ https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
  **Was sind Replicas?**
 https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
 
+k 
  Wir der Name schon sagt ein Set von Replicas eines bestimmten Pods. ReplicaSets werden komplett von Deployments gemanaged
 
 Schau dir so ein Deployment mit "k describe deployment.apps" selber an. Dort werden die Replicasets deklariert, die für das Deployment genutzt werden
