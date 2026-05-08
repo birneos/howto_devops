@@ -1,45 +1,26 @@
-```
+Beispiel Datei für ein einfaches Deployment
+```yaml
 apiVersion: apps/v1
-
 kind: Deployment
-
 metadata:
-
-  labels:
-
-    app: test
-
-  name: test
-
+  labels:
+    app: test
+  name: test
 spec:
-
-  replicas: 5
-
-  selector:
-
-    matchLabels:
-
-      app: test
-
-  strategy: {}
-
-  template:
-
-    metadata:
-
-      labels:
-
-        app: test
-
-    spec:
-
-      containers:
-
-      - image: nginx
-
-        name: nginx
-
-        resources: {}
-
+  replicas: 5
+  selector:
+    matchLabels:
+      app: test
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
 status: {}
+
 ```

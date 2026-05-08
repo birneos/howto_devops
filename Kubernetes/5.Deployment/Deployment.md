@@ -1,14 +1,13 @@
 
 https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
-  Wir könnnen damit eine gewünschte Anzahl an Replicas eines Images erstellen
+  Wir können damit eine gewünschte Anzahl an Replicas eines Images erstellen. Die Replicas sollen dann auch immer in der gewünschten Anzahl verfügbar sein, um eine performante Lastverteilung zu organisieren. Kubernetes managt das über ReplicaSets.
 
 `k create deployment -h | less`
 
 `k create deployment test --image=httpd --replicas=4`
 
   
-
 `k create deployment test --image=httpd --replicas=10 --dry-run=client -o yaml > deploy.yaml`
 
 `k apply -f deploy.yaml`
