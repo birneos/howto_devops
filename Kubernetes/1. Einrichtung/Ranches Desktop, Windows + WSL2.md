@@ -1,5 +1,5 @@
 
-## Ranches Desktop, Windows + WSL2
+## Installationen
 
 
 1. WSL2 muss installiert sein
