@@ -1,4 +1,5 @@
 ```mermaid
+
 graph TD
 
 A[Pod A] --> B[Pod B]
@@ -12,4 +13,5 @@ end
 
 note1[Each Pod has its own IP]
 note2[Pods can reach all other pods by default]
+
 ```
