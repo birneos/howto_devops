@@ -1,4 +1,4 @@
-Ein Deployment verwaltet eine Gruppe von Pods, um eine Anwendungs-Workload auszuführen, in der Regel eine, die keinen Zustand verwaltet.
++Ein Deployment verwaltet eine Gruppe von Pods, um eine Anwendungs-Workload auszuführen, in der Regel eine, die keinen Zustand verwaltet.
 
 https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 

@@ -32,12 +32,20 @@ Es ist möglich eine rollenbasierte Zugriffskontrolle zu machen, das nicht jeder
 
 ### **Wir erstellen einen neuen Namespace**
 
+Wenn wir einen Namespace erstellen ist wird diese im Cluster (etcd) gespeichert, es wird keine yaml angelegt, wir können diese aber anlegen oder später exportieren.
+
 `k create namespace <name>`
 
-`k create namespace mealie -o yaml --dry-client=client`
+`k create namespace mealie -o yaml --dry-run=client`   oder
+
+`k create namespace mealie -o yaml --dry-run=client > mealie-namespace.yaml`  
 
 ## Namespace löschen
 
 Wenn in dem Namespace noch Resources vorhanden sind (Pods etc), dann werden diese mit delete auch gelöscht
 
 `k delete namespace <name>`
+
+## Namespace exportieren der bereits im Cluster existiert
+
+`k get namespace mealie -o yaml > mealie-namespace.yaml`
