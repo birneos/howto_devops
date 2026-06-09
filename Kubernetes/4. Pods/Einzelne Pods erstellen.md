@@ -83,6 +83,8 @@ labels:
 
 `k delete pod nginx-mltest`
 
+`k run pod nginx --image=nginx`
+
   
 
 ## In den Container wechseln

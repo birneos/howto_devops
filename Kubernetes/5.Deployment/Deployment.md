@@ -240,4 +240,9 @@ Wir können das Deployment anpassen und neu ausführen.
 ![[Pasted image 20260508142407.png]]
 
 Wir entfernen auch denen einen noch laufenden Pod den wir einzeln erstellt hatten
-mit `k run pod nginx --image=nginx`
+mit `k run nginx --image=nginx`
+
+
+#### Deployment bzw. Pods entfernen
+
+`k delete deployments.app test-httpd`
