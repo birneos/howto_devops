@@ -1,4 +1,6 @@
 
+Networking geschieht in Kubernetes auf POD Ebene und wird durch das CNI Plugin implementiert. Und anstatt den Datenverkehr selbst an bestimmt Pods zu leiten, verwenden wir Services als einzigen Endpunkt.
+
 * Kubernetes hat einen Pool an IP Adressen
 * jeder Pod bekommt seine eigene IP Adresse
 * by default ist im Cluster jeder Pod per IP Adresse erreichbar
