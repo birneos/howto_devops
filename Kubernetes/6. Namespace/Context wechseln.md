@@ -5,10 +5,13 @@ zwischen den wir wechseln können. Per default wird immer ein Context angesproch
 
 Wenn wir in einem Projekt arbeiten können wir einen default context setzen
 
-Wenn wir kubectl get pods aufrufen, werden per default alle pods des aktuellen
+Wenn wir `kubectl get pods` aufrufen werden per default alle pods des aktuellen
 Contextes/Clusters angezeigt.
 
 ### Aktuellen Context (aktuelle Cluster) in dem wir uns bewegen
 
 `k config get-contexts`
 `k config set-context --current --namespace=mealie`
+
+
+`k config set-context --current --namespace=default`

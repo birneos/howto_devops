@@ -5,8 +5,12 @@
 	#erzeugt Namespace und zeig die yaml an
 	k create namespace mealie -o yaml 
 	```
- 
+ ### Kontextwechsel von default auf die Mealie Umgebung 
 
+	`k konfig set-context --current --namespace=mealie`
+
+ [[Context wechseln| siehe hier]]
+ 
 ### Deployment für die mealie-app erzeugen
 ```
 k create deployment mealie --image=nginx --dry-run=client -o yaml > mealie-deployment.yaml
