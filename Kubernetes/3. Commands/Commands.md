@@ -5,6 +5,20 @@ kubectl config get-context
 kubectl config get-contexts
 kubectl config set-context
 
+### VIM
+
+u - rückgängig machen
+
+```
+u - etwas rückgängig machen
+dd - zeile löschen
+
+%s/ersetzendeswort/neueswort/g
+
+# code in yaml einfügen
+:set paste schreiben und dann code einfügen
+```
+
 
 #### Hilfe ansehen, Ausgabe an Texteditor umleiten
 k create deployment -h | vim -
