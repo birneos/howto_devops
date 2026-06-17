@@ -1,6 +1,7 @@
 *  Volumes können vorher oder dynamisch erstellt werden
 
 Wir erstellen uns einen einfachen POD und legen ein leeres **emptyDir** Volume an. 
+**emptyDir** wird auch gelöscht, wenn der POD gelöscht wird
 
 Bsw. wir brauchen nur einen Zwischenspeicher um Informationen abzulegen.
 
@@ -92,4 +93,77 @@ Events:                      <none>
 
 
 ```
+k run busybox --image=busybox
+# der Container wird gestartet macht aber nichts weiter, es kommt eine Absturzschleife
+
+k describe pod busybox
+
+k delete pod busy box
+```
+
+
+### Wir erstellen 2 Container
+* busybox und nginx
+* beide nutzen das Speichervolume **scratch**
+* wir wissen der busybox container macht nichts weiter, er wird gestartet und macht nichts er wird **terminated**, ==es sei denn er hat einen laufenden Prozess,  wir führen auf der shell **bin/sh -c sleep 1000"==
+	
+```yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+  name: test-nginx
+spec:
+  containers:
+    - image: nginx
+      name: nginx
+      volumeMounts:
+        - mountPath: /scratch
+          name: scratch-volume
+    - image: busybox
+      name: busybox
+      command: ["/bin/sh","-c"]
+      args: ["sleep 1000"]
+      volumeMounts:
+        - mountPath: /scratch
+          name: scratch-volume
+  volumes:
+    - name: scratch-volume
+      emptyDir:
+           sizeLimit: 500Mi
+```
+
+### Wie kann ich die Bash in einem Pod mit mehreren Containern aufrufen?
+
+
+
+```bash
+#Hilfe aufrufen mit -h und nachlesen
+k exec storage-nginx -it -h
+# Mit -c kann ich den Container im Pod auswählen
+k exec storage-nginx -c nginx -it -- bash
+
+# Bei busybox gibt es nur die Posix Shell
+k exec storage-nginx -c nginx -it -- sh
+
+
+# Scratch Ordner beobachten
+
+# 1. Fenster
+k exec storage-nginx -c nginx -it -- sh
+cd scratch
+# wir gucken ob watch als befehl auf busybox exisitiert
+which watch
+# dann gucken wir einfach mal alle Sekunde
+watch -n 1 "ls -la"
+
+# 2. Fenster
+# legen in unserem anderen Container storage-nginx im Scratch Verzeichnis einen Datei an
+k exec storage-nginx -c nginx -it -- bash
+cd scratch
+touch hello.txt
+
+
+
 ```
