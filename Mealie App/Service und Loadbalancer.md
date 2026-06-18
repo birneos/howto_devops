@@ -58,6 +58,9 @@ status:
 
 ```
 
+### Mealie Service
+
+**mealie-service.yaml**
 ```yaml
 ## Angepasste Version mit Loadbalancer
 ## 

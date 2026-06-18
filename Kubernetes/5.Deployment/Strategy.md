@@ -1,4 +1,4 @@
-Wir in der [[Deployment]] yaml als Spezifizierung genutzt. Siehe [[Deployment#spec:Strategy]]
+Wir in der [[Kubernetes/5.Deployment/Deployment]] yaml als Spezifizierung genutzt. Siehe [[Kubernetes/5.Deployment/Deployment#spec:Strategy]]
 
 .spec.strategy legt die Strategie fest, mit der alte Pods durch neue ersetzt werden. .spec.strategy.type kann „Recreate“ oder „RollingUpdate“ sein. „RollingUpdate“ ist der Standardwert
 
